@@ -6,7 +6,7 @@ pipeline:
 
   update-base-image:
     image: no-cloud.fr/eve/docker
-    base_image: nextcloud
+    base_image: library/nextcloud
     tag: latest
     variable: FROM_DIGEST
 
@@ -14,5 +14,4 @@ pipeline:
     image: no-cloud.fr/eve
     action: commit
     secrets: [ git_user, git_password ]
-
 
