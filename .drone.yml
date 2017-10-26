@@ -1,0 +1,18 @@
+pipeline:
+
+  eve-clone:
+    image: no-cloud.fr/eve
+    action: clone
+
+  update-base-image:
+    image: no-cloud.fr/eve/docker
+    base_image: nextcloud
+    tag: latest
+    variable: FROM_DIGEST
+
+  eve-push:
+    image: no-cloud.fr/eve
+    action: commit
+    secrets: [ git_user, git_password ]
+
+
